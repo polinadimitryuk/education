@@ -1,4 +1,4 @@
-# Project Title (This is a template README.md file that you can adapt to your project)
+# Education Project 
 
 > A brief description of what the project does and its purpose.
 
@@ -48,7 +48,7 @@ Include a short discussion of the findings and what they imply.
 
 ## Authors
 
-- Your Name - [@yourhandle](https://github.com/yourhandle)
+- Polina Dimitryuk - [@polinadimitryuk](https://github.com/yourhandle)
 
 ---
 
