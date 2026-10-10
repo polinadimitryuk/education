@@ -1,7 +1,7 @@
 # Education Project 
 
-> A brief description of what the project does and its purpose.
-> education inequality
+> The purpose of this project is to inspect the datasets and examine the relationship between ACT scores and socioeconomic characteristics such as
+> the unemployment rate, median household income, and the percentage of children living in married-couple families.
 
 ---
 
@@ -9,7 +9,7 @@
 
 Provide a short and concise overview of the project. Mention the problem it solves, the data used, and the key outcomes or findings.
 
-- **Objective:** Clearly state the main goal of the project.
+- **Objective:** This project examines the relationship between ACT scores and socioeconomic factors.
 - **Domain:** (e.g., Healthcare, Finance, E-commerce, etc.)
 - **Key Techniques:** (e.g., Regression, Classification, Clustering, NLP, Time Series)
 
@@ -29,7 +29,8 @@ Provide a short and concise overview of the project. Mention the problem it solv
 
 ## Data
 
-- **Source:** Link to the data source(s) 
+- **Source:** [https://www.dropbox.com/scl/fi/fkafjk8902sq8ptxh94r2/ccd_sch_029_1617_w_1a_11212017.csv?rlkey=gucrdz5f6e38bezz2y3yalxbw&dl=0]
+- [https://github.com/brian-fischer/DATA-5100/blob/main/EdGap_data.xlsx]
 - **Description:** Brief overview of the dataset features, size, and format
 - **License:** (if applicable)
 
