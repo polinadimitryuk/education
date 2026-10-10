@@ -1,6 +1,7 @@
 # Education Project 
 
 > A brief description of what the project does and its purpose.
+> education inequality
 
 ---
 
