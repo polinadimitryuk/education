@@ -1,16 +1,17 @@
 # Education Project 
 
-> The purpose of this project is to inspect the datasets and examine the relationship between ACT scores and socioeconomic characteristics such as
-> the unemployment rate, median household income, and the percentage of children living in married-couple families.
 > In this project, I looked at how different socioeconomic factors are related to average ACT scores. I used two datasets: EdGap data and school information for the 2016–2017 school year. The ACT variable also includes an ACT-equivalent score when a school reported SAT results.
+
 > For this project, I created a few questions that I wanted to answer:
 
-> Which socioeconomic factors have the strongest relationship with average ACT scores? Does using multiple socioeconomic factors give a better model than using median income alone? Does adding state and charter school status improve the model, and is charter status still important after including the other factors?
+> 1. Which socioeconomic factors have the strongest relationship with average ACT scores?
+> 2. Does using multiple socioeconomic factors give a better model than using median income alone?
+> 3. Does adding just a state predictor improve the model?
+> 4. Does adding state and charter school predictors improve the model, and is the charter predictor still important after including the other factors?
+
 ---
 
 ## Project Overview
-
-Provide a short and concise overview of the project. Mention the problem it solves, the data used, and the key outcomes or findings.
 
 - **Objective:** This project examines the relationship between ACT scores and socioeconomic factors.
 - **Domain:** Education
@@ -21,13 +22,15 @@ Provide a short and concise overview of the project. Mention the problem it solv
 ## Project Structure
 
 ```
-├── data/  ccd_sch_029_1617_w_1a_11212017.csv  # Raw and processed data
-           EdGap_data.xlsx
-           education_clean.csv    
+├── data/---ccd_sch_029_1617_w_1a_11212017.csv  # Raw and processed data
+     ├── EdGap_data.xlsx
+     ├── ccd_sch_029_1617_w_1a_11212017.csv 
+     └── education_clean.csv
+           
 ├── code/
-          Education.ipinb  # Jupyter notebooks and Python scripts
+        └── Education.ipynb  # Jupyter notebooks and Python scripts
 ├── reports/
-            report        # Generated reports and visualizations
+        └── report        # Generated reports and visualizations
 ├── requirements.txt      # Dependencies
 └── README.md             # Project documentation
 ```
@@ -50,17 +53,20 @@ The first thing I did when I started inspecting the datasets was check data type
 
 Then I used plots and correlations to look at the relationships with ACT scores. I fitted a linear and a quadratic model for median income and compared a full socioeconomic regression with a reduced model. Then I standardized the predictors to compare their coefficients. Finally, I added state and charter predictors and used model comparisons and ANOVA to check whether they improved the fit or not.
 
+To run the analysis, open folder 'code'->Education.ipynb and run the cells in given order. 
+The notebook currently uses file paths from my computer, so the paths for the two input datasets and path where 'education_clean.csv' saved need to be updated.
+
 ---
 
 ## Results
 
-The results say that socioeconomic predictors are closely related to average ACT scores in schools from the dataset. 
-Free or reduced-price lunch has the strongest relationship with scores in both the correlations and the standardized regression. 
-A model with several socioeconomic variables fits much better than using median income alone. I also found that the reduced model works almost as well as the full socioeconomic model.
+The results show that socioeconomic predictors are related to average ACT scores in schools from the dataset. Free or reduced-price lunch has the largest absolute standardized coefficient in the reduced model. Using several socioeconomic factors gives a much better fit than using median income alone. The reduced model also gives almost the same results as the full socioeconomic model.
 
-Adding state and charter status improves the fit again, but charter status by itself is not statistically significant once the other factors are included. The overall improvement seems to come mainly from the state differences.
+Adding the state predictor increases R-squared from 0.6276 to 0.6776 and reduces Mean Absolute Error from 1.1523 to 1.0369 ACT points. Adding the charter predictor after state increases R-squared only slightly, to 0.6777, while adjusted R-squared and Mean Absolute Error stay almost the same. The charter predictor is not statistically significant after including the other factors (p = 0.401).
 
-There are limitations. The data cover only 20 states, some predictor values were imputed, and the model errors still have outliers. 
+I would choose the socioeconomic plus state model as my final model. It gives almost the same results as the model with both state and charter, but uses fewer predictors.
+
+There are limitations. The data cover only 19 states (it was 20 before I cleaned data), some predictor values were imputed, and there are still some large prediction errors. 
 Also, I compared how the models fit these schools rather than testing them on a separate set of schools. 
 
 ---
@@ -81,4 +87,3 @@ This project is licensed under the MIT License.
 
 - Python in Jupyter Notebook.
 - Libraries: pandas, NumPy, Matplotlib, Seaborn, Plotly, scikit-learn, statsmodels, and openpyxl 
-
